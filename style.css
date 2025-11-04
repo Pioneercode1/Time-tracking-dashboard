@@ -2,32 +2,108 @@
 :root {
     /* Colors
     Primary */
---purple-600: hsl(246, 80%, 60%);
---orange-work: hsl(15, 100%, 70%);
---blue-play: hsl(195, 74%, 62%);
---pink-study: hsl(348, 100%, 68%);
---green-exercise: hsl(145, 58%, 55%);
---purple-social: hsl(264, 64%, 52%);
---yellow-self-care: hsl(43, 84%, 65%);
+    --purple-600: hsl(246, 80%, 60%);
+    --orange-work: hsl(15, 100%, 70%);
+    --blue-play: hsl(195, 74%, 62%);
+    --pink-study: hsl(348, 100%, 68%);
+    --green-exercise: hsl(145, 58%, 55%);
+    --purple-social: hsl(264, 64%, 52%);
+    --yellow-self-care: hsl(43, 84%, 65%);
     /* Neutral */
---navy-950: hsl(226, 43%, 10%);
---navy-900: hsl(235, 46%, 20%);
---purple-500: hsl(235, 45%, 61%);
---navy-200: hsl(236, 100%, 87%);
+    --background-dark: hsl(226, 43%, 10%);
+    --card-background: hsl(235, 46%, 20%);
+    --purple-500: hsl(235, 45%, 61%);
+    --navy-200: hsl(236, 100%, 87%);
+    --white: #fff;
 }
 
 html {
     font-size: 18px;
 }
 
-body {
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
-  min-height: 100vh;
-  background-color: var(--navy-950);
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    color: var(--white);
+    min-height: 100vh;
+    background-color: var(--background-dark);
+    display: grid;
+    place-content: center;
+}
 
+.component-dashboard {
+    width: clamp(350px, 50%, 38rem);
+    padding-inline: 1rem;
+    padding-block: 1rem;
+}
+
+.report-for {
+    width: 100%;
+    height: 180px;
+    margin-block-end: 1rem;
+    background-color: var(--card-background);
+    border-radius: 12px;
+}
+
+.report-for .report-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    height: 65%;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    background-color: var(--purple-600);
+    border-radius: 12px;
+}
+
+.report-header img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 3px solid var(--white);
+}
+
+.report-header span {
+    font-size: clamp(14px, 0.6rem + 1.5vw, 1rem);
+    color: var(--navy-200);
+}
+
+.report-header h1 {
+    font-size: clamp(20px, 0.9rem + 2vw, 1.4rem);
+    font-weight: 300;
+}
+
+.report-for .report-time {
+    height: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.report-time .btn-report-time {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: inherit;
+    transition: color 0.4s ease-in-out;
+}
+
+.btn-report-time:hover {
+    color: var(--navy-200);
+    cursor: pointer;
+}
+
+.btn-report-time:focus {
+    color: var(--navy-200);                 
+}
