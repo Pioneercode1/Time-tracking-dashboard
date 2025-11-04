@@ -46,7 +46,7 @@ body {
     padding-block: 1rem;
 }
 
-.report-for {
+.card-report {
     width: 100%;
     height: 180px;
     margin-block-end: 1rem;
@@ -54,7 +54,7 @@ body {
     border-radius: 12px;
 }
 
-.report-for .report-header {
+.card-report .report-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -83,7 +83,7 @@ body {
     font-weight: 300;
 }
 
-.report-for .report-time {
+.card-report .report-time {
     height: 35%;
     display: flex;
     justify-content: space-around;
@@ -105,5 +105,83 @@ body {
 }
 
 .btn-report-time:focus {
-    color: var(--navy-200);                 
+    color: var(--navy-200);
+}
+
+/* style for cards */
+.container-card-dashboard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+.card-dashboard {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-block-end: 1rem;
+    border-radius: 12px;
+    background-color: var(--card-background);
+    overflow: hidden;
+}
+
+.card-dashboard .back-img {
+    width: 100%;
+    height: 35%;
+    background-color: var(--orange-work);
+    direction: rtl;
+    overflow: hidden;
+}
+
+.card-dashboard .card-info {
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-dashboard .card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1rem;
+}
+
+.card-dashboard .card-content {
+    width: 100%;
+    display: flex;
+    gap: 7rem;
+    padding-inline: 1rem;
+}
+
+.card-dashboard button {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    transition: color 0.4s ease-in-out;
+}
+
+.card-dashboard h3 {
+    font-size: clamp(20px, 0.8rem + 2vw, 1.4rem);
+    font-weight: 400;
+}
+
+.card-dashboard p {
+    font-size: clamp(14px, 0.6rem + 1.5vw, 1rem);
+    color: var(--navy-200);
+}
+
+.card-dashboard span {
+    font-size: clamp(22px, 1rem + 2vw, 1.5rem);
+    font-weight: 300;
+    letter-spacing: 1px;
 }
