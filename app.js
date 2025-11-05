@@ -30,17 +30,16 @@ function updateUI(timeframe) {
 
     // Element Map
     elementMap.forEach(mapItem => {
-        // البحث عن بيانات النشاط في البيانات المجلوبة
         const activity = dashboardData.find(item => item.title === mapItem.title);
         
         if (activity) {
             const current = activity.timeframes[timeframe].current;
             const previous = activity.timeframes[timeframe].previous;
 
-            // تحديث الوقت الحالي (Span)
+            // update(Span)
             document.getElementById(mapItem.currentId).textContent = `${current}hrs`;
             
-            // تحديث الوقت السابق (P)
+            // update(P)
             document.getElementById(mapItem.previousId).textContent = 
                 `${previousLabel[timeframe]} - ${previous}hrs`;
         }
@@ -58,18 +57,14 @@ function updateUI(timeframe) {
 // Git data from file JSON
 async function fetchData() {
     try {
-        // نستخدم Fetch API لجلب ملف data.json
+        // Fetch API - data.json
         const response = await fetch('./data.json');
-        
-        // التحقق من أن الاستجابة كانت ناجحة
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
-        // تحويل الاستجابة إلى JSON
+        // JSON
         dashboardData = await response.json();
-        
-        // بعد جلب البيانات، نقوم بتحديث الواجهة بالبيانات الافتراضية (Weekly)
         functionWeekly();
 
     } catch (error) {
