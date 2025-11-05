@@ -228,7 +228,7 @@ body {
 /* Large Desktop(1440px) */
 @media (min-width: 90rem) {
     .component-dashboard {
-        width: clamp(1200px, 70vw, 70rem);
+        width: clamp(1024px, 78vw, 70rem);
         padding-inline: 1rem;
         padding-block: 1rem;
         display: grid;
